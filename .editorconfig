@@ -11,8 +11,11 @@ charset = utf-8
 trim_trailing_whitespace = true
 insert_final_newline = true
 
-[*.{json,yml,adoc}]
+[*.{json,yml,md,cabal}]
 indent_style = space
 
 [*.yml]
 indent_size = 2
+
+[*.md]
+trim_trailing_whitespace = false
