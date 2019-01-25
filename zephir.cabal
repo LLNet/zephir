@@ -1,28 +1,28 @@
 name:                zephir
 version:             1.0.0
-synopsis:            Zephir is a compiled high level language aimed to the creation of C-extensions for PHP
+synopsis:            A compiled high level programming language aimed to the creation of C-extensions for PHP.
+homepage:            https://zephir-lang.com
+license:             MIT
+license-file:        LICENSE
+author:              Serghei Iakovlev <serghei@zephir-lang.com>
+maintainer:          serghei@zephir-lang.com
+copyright:           (c) 2013-2019 Zephir Team
+bug-reports:         https://github.com/zephir-lang/zephir/issues?state=open
+category:            Language
+build-type:          Simple
+stability:           Experimental
+cabal-version:       >= 1.10
 description:
     A high level programming language that eases the creation and maintainability of extensions for PHP.
     Zephir extensions are exported to C code that can be compiled and optimized by major C compilers such as gcc/clang/vc++.
     Functionality is exposed to the PHP language.
-homepage:            https://zephir-lang.com
-license:             MIT
-license-file:        LICENSE
-author:              Zephir Team <team@zephir-lang.com>
-maintainer:          serghei@zephir-lang.com
-copyright:           (c) 2013-2019 Zephir Team
-category:            Language
-bug-reports:         https://github.com/zephir-lang/zephir/issues?state=open
-stability:           Alpha
-build-type:          Simple
-cabal-version:       >= 1.10
 
 extra-source-files:
     README.md
     CHANGELOG.md
 
 executable zephir
-    hs-source-dirs:   app
+    hs-source-dirs:   src
     main-is:          Main.hs
     ghc-options:      -threaded -rtsopts -with-rtsopts=-N
     build-depends:    base
@@ -38,4 +38,4 @@ executable zephir
 
 source-repository head
     type:     git
-    location: https://github.com/zephir-lang/zephir
+    location: git://github.com/zephir-lang/zephir.git
