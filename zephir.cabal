@@ -1,0 +1,21 @@
+name:                zephir
+version:             1.0.0
+synopsis:            Zephir is a compiled high level language aimed to the creation of C-extensions for PHP
+description:
+    A high level programming language that eases the creation and maintainability of extensions for PHP.
+    Zephir extensions are exported to C code that can be compiled and optimized by major C compilers such as gcc/clang/vc++.
+    Functionality is exposed to the PHP language.
+homepage:            https://zephir-lang.com
+license:             MIT
+license-file:        LICENSE
+author:              Zephir Team <team@zephir-lang.com>
+maintainer:          serghei@zephir-lang.com
+copyright:           (c) 2013-2019 Zephir Team
+category:            Language
+build-type:          Simple
+bug-reports:         https://github.com/zephir-lang/zephir/issues?state=open
+stability:           Alpha
+
+source-repository head
+    type: git
+    location: https://github.com/zephir-lang/zephir
