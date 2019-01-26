@@ -8,12 +8,13 @@ author:          Serghei Iakovlev <serghei@zephir-lang.com>
 maintainer:      serghei@zephir-lang.com
 copyright:       (c) 2013-2019 Zephir Team
 bug-reports:     https://github.com/zephir-lang/zephir/issues?state=open
-category:        Language
+category:        Language, Compiler
 build-type:      Simple
 stability:       Experimental
 cabal-version:   >= 1.10
 description:
     A high level programming language that eases the creation and maintainability of extensions for PHP.
+    .
     Zephir extensions are exported to C code that can be compiled and optimized by major C compilers such as gcc/clang/vc++.
     Functionality is exposed to the PHP language.
 
@@ -27,12 +28,15 @@ executable zephir
     main-is:          Main.hs
     ghc-options:      -threaded -rtsopts -with-rtsopts=-N
 
+    -- GHC bundled libs
     build-depends:
-        base                 >= 4.6.0.0 && < 5,
-        turtle               >= 1.2.0 && 1.6.0,
+        base >= 4.8.0.0 && < 5,
+        text
+
+    build-depends:
+        turtle               >= 1.2.0 && < 1.6.0,
         optparse-applicative,
         system-filepath,
-        text,
         configurator,
         aeson,
         bytestring,
