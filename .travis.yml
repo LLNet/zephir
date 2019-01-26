@@ -8,6 +8,8 @@ git:
 cache:
   apt: true
   timeout: 604800
+  directories:
+    - $HOME/.cabal/packages
 
 env:
   global:
@@ -15,9 +17,9 @@ env:
     - GHCPKG=ghc
 
   matrix:
-    - CABALVER=1.16 GHCVER=7.4.1
+    - CABALVER=1.16 GHCVER=7.6.1
     - CABALVER=1.24 GHCVER=8.0.1
-    - CABALVER=2.2.4 GHCVER=8.6.3
+    - CABALVER=2.4 GHCVER=8.6.3
 
 before_install:
   - |
