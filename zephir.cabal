@@ -28,8 +28,8 @@ executable zephir
     ghc-options:      -threaded -rtsopts -with-rtsopts=-N
 
     build-depends:
-        base                 >= 4.5.0.0 && < 5,
-        turtle,
+        base                 >= 4.6.0.0 && < 5,
+        turtle               >= 1.2.0 && 1.6.0,
         optparse-applicative,
         system-filepath,
         text,
