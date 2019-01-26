@@ -22,3 +22,6 @@
 {-# LANGUAGE RecordWildCards #-}
 
 import qualified Turtle
+
+main :: IO ()
+main = putStrLn "Zephir"
