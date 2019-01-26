@@ -13,6 +13,7 @@ cache:
 
 env:
   matrix:
+    - CABALVER=1.22 GHCVER=7.10.1
     - CABALVER=1.24 GHCVER=8.0.1
     - CABALVER=2.4 GHCVER=8.6.3
 
