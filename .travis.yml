@@ -10,6 +10,10 @@ cache:
   timeout: 604800
 
 env:
+  global:
+    - CABALPKG=cabal-install
+    - GHCPKG=ghc
+
   matrix:
     - CABALVER=system GHCVER=system
     - CABALVER=1.16 GHCVER=7.0.1
@@ -19,8 +23,8 @@ before_install:
   - |
       # General settings
       set -e
-      stty cols 120
       ulimit -c unlimited -S
+      stty cols 120
 
       # Setting up cabal and ghc versions
       if [ "${CABALVER}${GHCVER}" != "systemsystem" ]; then
@@ -30,9 +34,6 @@ before_install:
         export CABALPKG=cabal-install-$CABALVER
         export GHCPKG=ghc-$GHCVER
         export PATH=/opt/ghc/$GHCVER/bin:/opt/cabal/$CABALVER/bin:$PATH
-      else
-        export CABALPKG=cabal-install
-        export GHCPKG=ghc
       fi
 
 install:
