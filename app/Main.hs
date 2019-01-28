@@ -22,6 +22,56 @@
 {-# LANGUAGE RecordWildCards #-}
 
 import qualified Turtle
+import Prelude hiding (FilePath)
+import Filesystem.Path.CurrentOS as Path
+
+import qualified Data.Aeson as JSON
+import Data.Aeson ((.=), (.:))
+
+import Options.Applicative
+import Control.Monad
+import Data.Traversable
+import Data.Maybe
+import Data.List
+
+import qualified Data.Text as T
+import qualified Data.Text.Encoding as T.Encoding
+import qualified Data.ByteString.Lazy as B
+
+import qualified System.Console.ANSI as ANSI
+
+zpProgDesc :: String
+zpProgDesc = "Zephir program description"
+
+zpProgHeader :: String
+zpProgHeader = "Zephir program header"
+
+showHelpOnErrorExecParser :: ParserInfo a -> IO a
+showHelpOnErrorExecParser = customExecParser (prefs showHelpOnError)
+
+data Command = CommandTest deriving (Show)
 
 main :: IO ()
-main = putStrLn "Zephir"
+main = do
+    command <- showHelpOnErrorExecParser (info (helper <*> parseCommand)
+        (fullDesc  <>
+        progDesc zpProgDesc <>
+        header zpProgHeader))
+    run command
+
+parseTestCommand :: Parser Command
+parseTestCommand = pure CommandTest
+
+parseCommand :: Parser Command
+parseCommand = subparser $
+    command "test"
+        (info (helper <*> parseTestCommand)
+        (fullDesc <> progDesc "some test command"))
+
+runTest :: IO ()
+runTest = putStrLn "Zephir"
+
+run :: Command -> IO ()
+run command =
+    case command of
+        CommandTest -> runTest

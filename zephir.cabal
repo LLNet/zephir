@@ -12,9 +12,7 @@ category:           Language, Compiler
 build-type:         Simple
 stability:          Experimental
 cabal-version:      >= 1.10
-tested-with:        GHC == 7.10.3
-                  , GHC == 8.0.2
-                  , GHC == 8.6.3
+tested-with:        GHC == 8.0.2, GHC == 8.6.3
 extra-source-files:
   .travis.yml
   .gitignore
@@ -41,7 +39,7 @@ executable zephir
 
     -- GHC bundled libs
     build-depends:
-        base >= 4.8.0.0 && < 5,
+        base >= 4.9.0.0 && < 5,
         text
 
     build-depends:
