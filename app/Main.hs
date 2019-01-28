@@ -42,11 +42,8 @@ import qualified Data.ByteString.Lazy as B
 
 import qualified System.Console.ANSI as ANSI
 
-zpProgDesc :: String
-zpProgDesc = "Zephir program description"
-
 zpProgHeader :: String
-zpProgHeader = "Zephir program header"
+zpProgHeader = "Zephir 1.0.0"
 
 showHelpOnErrorExecParser :: ParserInfo a -> IO a
 showHelpOnErrorExecParser = customExecParser (prefs showHelpOnError)
@@ -56,9 +53,7 @@ data Command = CommandTest deriving (Show)
 main :: IO ()
 main = do
     command <- showHelpOnErrorExecParser (info (helper <*> parseCommand)
-        (fullDesc  <>
-        progDesc zpProgDesc <>
-        header zpProgHeader))
+        (fullDesc  <> header zpProgHeader))
     run command
 
 parseTestCommand :: Parser Command

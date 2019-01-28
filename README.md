@@ -9,7 +9,7 @@
 **Work In Progress.  Do not use at production systems.**
 
 [Zephir][0] - (_<strong>Ze</strong>nd Engine Ph<strong>p</strong> <strong>I</strong>nt<strong>r</strong>mediate_), -
-is a high level programming Language that eases the creation and maintainability of extensions for PHP.
+is a high level programming language that eases the creation and maintainability of extensions for PHP.
 Zephir extensions are exported to C code that can be compiled and optimized by major C compilers such as gcc/clang/vc++.
 Functionality is exposed to the PHP language.
 
