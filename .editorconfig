@@ -14,5 +14,8 @@ insert_final_newline = true
 [.travis.yml]
 indent_size = 2
 
+[*.cabal]
+indent_size = 2
+
 [*.md]
 trim_trailing_whitespace = false
