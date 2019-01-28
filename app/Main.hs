@@ -29,6 +29,8 @@ import qualified Data.Aeson as JSON
 import Data.Aeson ((.=), (.:))
 
 import Options.Applicative
+import Data.Semigroup ((<>))
+
 import Control.Monad
 import Data.Traversable
 import Data.Maybe
