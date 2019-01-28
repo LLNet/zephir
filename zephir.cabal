@@ -20,6 +20,8 @@ extra-source-files:
   .editorconfig
   cabal.project
   CHANGELOG.md
+  CODE_OF_CONDUCT.md
+  CONTRIBUTING.md
   HLint.hs
   LICENSE
   README.md
